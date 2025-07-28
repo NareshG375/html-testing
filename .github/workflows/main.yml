@@ -16,7 +16,7 @@ jobs:
           aws-region: ap-south-1
       - name: Sync to S3
         run: |
-          aws s3 sync ./build \
+          aws s3 sync \
             s3://${{ secrets.S3_BUCKET_NAME }}/ \
             --delete \
             --exclude ".git/*" --exclude ".github/*"
